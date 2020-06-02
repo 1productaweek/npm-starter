@@ -1,6 +1,6 @@
 {
   "name": "@1productaweek/npm-package-starter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A boilerplate to help you get started creating a npm package.",
   "main": "dist/index.js",
   "scripts": {
