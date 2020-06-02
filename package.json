@@ -1,11 +1,11 @@
 {
-  "name": "@1productaweek/npm-package-starter",
-  "version": "0.1.1",
-  "description": "A boilerplate to help you get started creating a npm package.",
+  "name": "@1productaweek/npm-starter",
+  "version": "0.1.0",
+  "description": "NPM starter package.",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf lib",
-    "build": "yarn clean && babel src --ignore .spec.js,__mocks__ -d dist --copy-files --extensions '.ts,.js'",
+    "build": "yarn clean && NODE_ENV=production babel src --ignore .spec.js,__mocks__ -d dist --copy-files --extensions '.ts,.js'",
     "prepare": "npm run clean && npm run build",
     "prepublish": "yarn prepare",
     "test": "jest"
@@ -16,6 +16,7 @@
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.1",
     "@babel/plugin-proposal-optional-chaining": "^7.10.1",
+    "@babel/plugin-transform-react-display-name": "^7.10.1",
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
@@ -35,9 +36,12 @@
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^7.0.0-beta.3",
+    "babel-preset-react-app": "^9.1.2",
     "babel-register": "^7.0.0-beta.3",
     "eslint": "^7.1.0",
+    "eslint-config-react-app": "^5.2.1",
     "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-react": "^9.2.0",
     "eslint-import-resolver-babel-module": "^5.1.0",
     "eslint-import-resolver-node": "^0.3.2",
     "eslint-import-resolver-typescript": "^2.0.0",
@@ -46,6 +50,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^26.0.1",
     "npm-run-all": "^4.1.5",
@@ -53,5 +59,7 @@
     "typescript": "^3.9.3",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "watch": "^1.0.2"
+  },
+  "dependencies": {
   }
 }
