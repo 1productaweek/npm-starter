@@ -4,12 +4,16 @@
   "description": "NPM starter package.",
   "main": "dist/index.js",
   "scripts": {
-    "clean": "rimraf lib",
-    "build": "yarn clean && NODE_ENV=production babel src --ignore .spec.js,__mocks__ -d dist --copy-files --extensions '.ts,.js'",
+    "clean": "rimraf dist",
+    "build": "yarn clean &&  NODE_ENV=production  babel src --ignore .spec.js,__mocks__ -d dist --copy-files --extensions '.ts,.tsx,.js' && rimraf -rf dist/**/__tests__ && yarn build:types",
+    "build:types": "tsc -p tsconfig.types.json",
     "prepare": "npm run clean && npm run build",
     "prepublish": "yarn prepare",
     "test": "jest"
   },
+  "files": [
+    "dist/*"
+  ],
   "author": "Calum Moore",
   "license": "MIT",
   "devDependencies": {
@@ -19,8 +23,10 @@
     "@babel/plugin-transform-react-display-name": "^7.10.1",
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
+    "@babel/preset-react": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
     "@storybook/addon-knobs": "^5.3.19",
+    "@testing-library/react": "^10.0.5",
     "@types/jest": "^25.2.3",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "@typescript-eslint/parser": "^3.0.2",
@@ -60,6 +66,5 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "watch": "^1.0.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
