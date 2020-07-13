@@ -28,11 +28,11 @@ Finally, add overwrite the contents of  `.storybook/main.js` file that was creat
 
 ```js
 module.exports = {
-  stories: ['../stories/**/*.sb.tsx'],
+  stories: ['../stories/**/*.sb.tsx', '../**/__stories__/**/*.sb.tsx'],
   addons: [
     '@storybook/preset-typescript',
-    '@storybook/addon-actions',       // optional
-    '@storybook/addon-links',         // optional
+    '@storybook/addon-actions', 
+    '@storybook/addon-links', 
   ],
 }
 ```
