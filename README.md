@@ -24,10 +24,15 @@ Then add these dependencies:
 yarn add --dev @storybook/preset-typescript ts-loader fork-ts-checker-webpack-plugin
 ```
 
-Finally, add this in the `.storybook/main.js` file that was created in the step above:
+Finally, add overwrite the contents of  `.storybook/main.js` file that was created in the step above:
 
 ```js
 module.exports = {
-  addons: ['@storybook/preset-typescript'],
-};
+  stories: ['../stories/**/*.sb.tsx'],
+  addons: [
+    '@storybook/preset-typescript',
+    '@storybook/addon-actions',       // optional
+    '@storybook/addon-links',         // optional
+  ],
+}
 ```
