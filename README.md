@@ -6,5 +6,7 @@ It has the following additional features:
 
  * ✅ Typescript
  * ✅ Opinionated ESLint
+ * ✅ Jest
+ * ✅ React (optional)
 
 
