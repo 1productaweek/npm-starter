@@ -1,4 +1,4 @@
-# 1PAW - NPM Starter
+# NPM Starter
 
 This project is an npm package starter used by @calummoore for @1productaweek.
 
